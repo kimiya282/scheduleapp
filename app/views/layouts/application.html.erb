@@ -7,11 +7,16 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application': 'reload' %>
     
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+  <header>
+  <h3 class="toptext">スケジュール管理アプリ</h3>
+</header>
+  <%= yield %>
+ 
+</body>
 </html>
+
