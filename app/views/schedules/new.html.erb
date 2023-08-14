@@ -1,0 +1,35 @@
+<h3>予定の新規追加</h3>
+
+<%= form_with model: @schedule do |f| %>
+  <table>
+  
+    <tr>
+      <th><%= f.label :name ,"タイトル" %></th>
+      <td><%= f.text_field :title, placeholder:"タイトル" %></td>
+    </tr>
+
+    <tr>
+      <th><%= f.label :開始日, class: 'control-label' %></th>
+      <td><%= f.date_field :startdate, class: 'form-control' %></td>
+    </tr>
+
+    <tr>
+      <th><%= f.label :終了日, class: 'control-label' %></th>
+      <td><%= f.date_field :finishdate, class: 'form-control' %></td>
+    </tr>
+
+
+
+    <tr>
+      <th><%= f.label :introduction ,"スケジュールメモ" %></th>
+      <td><%= f.text_area :memo, placeholder:"メモを入力する" %></td>
+    </tr>
+  </table>
+
+  <div>
+    <ul>
+      <li><%= f.submit "保存"%></li>
+      <li><%= link_to "キャンセル", :schedules %></li>
+    </ul>
+  </div>
+<% end %>

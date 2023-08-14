@@ -1,0 +1,44 @@
+
+<div class="button_solid004">
+<a href="schedules/new" class="btn-solid"><span>新規追加</span></a>
+
+</div>
+ 
+<table>
+<thead>
+<div class="tablecss">
+ <tr>
+   <th>ID</th>
+   <th>タイトル</th>
+   <th>開始日</th>
+   <th>終了日</th>
+   <th>終日</th>
+   <th>更新日時</th>
+   <th>作成日</th>
+ </tr>
+ </div>
+</thead>
+
+<% if flash[:notice] %>
+<p class="notice"><%= flash[:notice] %></p>
+<% end %>
+
+<tbody>
+ <% @schedules.each do |schedule| %>
+   <tr>
+     <td><%= schedule.id %></td>
+     <td><%= schedule.title %></td>
+     <td><%= schedule.startdate %></td>
+     <td><%= schedule.finishdate %></td>
+     <td><%= schedule.finishdate %></td>
+     <td><%= schedule.updated_at.to_s(:datetime_jp2) %></td>
+     <td><%= schedule.created_at.to_s(:datetime_jp) %></td>
+   </tr>
+ <% end %>
+</tbody>
+
+
+</table>
+
+
+
