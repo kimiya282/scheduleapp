@@ -15,6 +15,7 @@
    <th>終日</th>
    <th>更新日時</th>
    <th>作成日</th>
+   <th>詳細</th>
  </tr>
  </div>
 </thead>
@@ -33,6 +34,7 @@
      <td><%= schedule.finishdate %></td>
      <td><%= schedule.updated_at.to_s(:datetime_jp2) %></td>
      <td><%= schedule.created_at.to_s(:datetime_jp) %></td>
+     <td><%= link_to "詳細", schedule %></td>
    </tr>
  <% end %>
 </tbody>
