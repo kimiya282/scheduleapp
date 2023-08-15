@@ -16,6 +16,8 @@
    <th>更新日時</th>
    <th>作成日</th>
    <th>詳細</th>
+   <th>編集</th>
+   <th>削除</th>
  </tr>
  </div>
 </thead>
@@ -34,7 +36,11 @@
      <td><%= schedule.finishdate %></td>
      <td><%= schedule.updated_at.to_s(:datetime_jp2) %></td>
      <td><%= schedule.created_at.to_s(:datetime_jp) %></td>
-     <td><%= link_to "詳細", schedule %></td>
+     <td><%= link_to "参照", schedule %></td>
+     <td><%= link_to "編集", [:edit, schedule] %></td>
+     <div class ="button">
+     <td><%= button_to "削除", schedule, :method => :delete, data: { notice: "本当に削除しますか？" } %></td>
+     </div>
    </tr>
  <% end %>
 </tbody>

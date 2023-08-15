@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_12_213851) do
+ActiveRecord::Schema.define(version: 2023_08_13_203635) do
+
+  create_table "schedules", force: :cascade do |t|
+    t.string "title"
+    t.date "startdate"
+    t.date "finishdate"
+    t.string "memo"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
