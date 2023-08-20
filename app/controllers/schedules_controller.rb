@@ -12,7 +12,7 @@ def new
 end
 
 def create
-  @schedule = Schedule.new(params.require(:schedule).permit(:title, :startdate, :finishdate, :memo))
+  @schedule = Schedule.new(params.require(:schedule).permit(:title, :startdate, :finishdate, :all_day, :memo))
   if @schedule.save
     flash[:notice] = "スケジュールを登録しました。"
     redirect_to :schedules
@@ -32,7 +32,7 @@ end
 
 def update
   @schedule = Schedule.find(params[:id])
-  if @schedule.update(params.require(:schedule).permit(:title, :startdate, :finishdate, :memo))
+  if @schedule.update(params.require(:schedule).permit(:title, :startdate, :finishdate, :all_day, :memo))
     flash[:notice] = "スケジュール「#{@schedule.id}」を更新しました"
     redirect_to :schedules
   else

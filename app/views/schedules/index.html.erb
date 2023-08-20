@@ -29,7 +29,7 @@
       <td><%= schedule.title %></td>
       <td><%= schedule.startdate %></td>
       <td><%= schedule.finishdate %></td>
-      <td><%= schedule.finishdate %></td>
+      <td><% if schedule.all_day == true %>○<% else schedule.all_day =false %><% end %></td>
       <td><%= schedule.updated_at.to_s(:datetime_jp2) %></td>
       <td><%= schedule.created_at.to_s(:datetime_jp) %></td>
       <td><%= link_to "参照", schedule %></td>

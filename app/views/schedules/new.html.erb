@@ -13,15 +13,19 @@
     </tr>
 
     <tr>
-      <th><%= f.label :開始日, class: 'control-label' %></th>
+      <th><%= f.label :開始日, class: '開始日' %></th>
       <td><%= f.date_field :startdate, class: 'form-control' %></td>
     </tr>
 
     <tr>
-      <th><%= f.label :終了日, class: 'control-label' %></th>
+      <th><%= f.label :終了日, class: '終了日' %></th>
       <td><%= f.date_field :finishdate, class: 'form-control' %></td>
     </tr>
 
+      <tr>
+       <th><%= f.label :allday ,"終日" %></th>
+       <td><%= f.check_box :all_day, {} , "true", "false" %></td>
+     </tr>
 
 
     <tr>

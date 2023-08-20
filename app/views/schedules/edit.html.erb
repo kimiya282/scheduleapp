@@ -14,6 +14,11 @@
       <th><%= f.label :finishdate ,"終了日" %></th>
       <td><%= f.date_field :finishdate %></td>
     </tr>
+
+    <tr>
+       <th><%= f.label :all_day ,"終日" %></th>
+       <td><%= f.check_box :all_day, {}, true, false %></td>
+     </tr>
     <tr>
       <th><%= f.label :memo ,"スケジュールメモ" %></th>
       <td><%= f.text_area :memo %></td>
