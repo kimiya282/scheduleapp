@@ -1,6 +1,8 @@
 class SchedulesController < ApplicationController
   def index
     @schedules = Schedule.all
+    
+    @schedule_count = Schedule.all.count
   end
 
 
@@ -21,6 +23,7 @@ end
 
 def show
   @schedule = Schedule.find(params[:id])
+  
 end
 
 def edit
@@ -30,7 +33,7 @@ end
 def update
   @schedule = Schedule.find(params[:id])
   if @schedule.update(params.require(:schedule).permit(:title, :startdate, :finishdate, :memo))
-    flash[:notice] = "ユーザーIDが「#{@schedule.id}」の情報を更新しました"
+    flash[:notice] = "スケジュール「#{@schedule.id}」を更新しました"
     redirect_to :schedules
   else
     render "edit"
@@ -40,7 +43,7 @@ end
 def destroy
   @schedule = Schedule.find(params[:id])
   @schedule.destroy
-  flash[:notice] = "ユーザーを削除しました"
+  flash[:notice] = "スケジュールを削除しました"
   redirect_to :schedules
 end
 
