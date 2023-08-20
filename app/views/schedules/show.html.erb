@@ -15,7 +15,9 @@
   </tr>
   <tr>
     <th>終日</th>
-    <td><%= @schedule.checkbox %></td>
+    <td><% if @schedule.all_day == true %>○<% else @schedule.all_day =false %><% end %>
+    </td>
+    
   </tr>
   <tr>
     <th>スケジュールメモ</th>

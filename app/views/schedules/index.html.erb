@@ -34,7 +34,7 @@
       <td><%= schedule.created_at.to_s(:datetime_jp) %></td>
       <td><%= link_to "参照", schedule %></td>
       <td><%= link_to "編集", [:edit, schedule] %></td>
-      <td><%= button_to '削除', schedule, method: :delete, data:{ confirm: '本当に削除して良いですか?', cancel: 'やめる', commit: '削除する'}, title: '削除確認' %></td>
+      <td><%= link_to '削除', schedule, method: :delete, data:{ confirm: '本当に削除して良いですか?', cancel: 'やめる', commit: '削除する'}, title: '削除確認' %></td>
     
 
       

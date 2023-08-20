@@ -3,6 +3,7 @@ class Schedule < ApplicationRecord
     validates :startdate, presence: true
     validates :finishdate, presence: true
     validates :memo, length: { in: 0..500 }
+    validates :title, length:{in: 0..20}
 
     validate :start_end_check
     def start_end_check
