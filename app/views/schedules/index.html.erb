@@ -1,0 +1,56 @@
+
+<div class="button_solid004">
+<a href="schedules/new" class="btn-solid"><span>新規追加</span></a>
+</div>
+
+<table>
+  <thead>
+    <div class="tablecss">
+   <tr>
+      <th>ID</th>
+      <th>タイトル</th>
+      <th>開始日</th>
+      <th>終了日</th>
+      <th>終日</th>
+      <th>更新日時</th>
+      <th>作成日</th>
+      <th>詳細</th>
+      <th>編集</th>
+      <th>削除</th>
+    </tr> 
+  </thead>
+
+ 
+
+  <tbody>
+  <% @schedules.each do |schedule| %>
+    <tr>
+      <td><%= schedule.id %></td>
+      <td><%= schedule.title %></td>
+      <td><%= schedule.startdate %></td>
+      <td><%= schedule.finishdate %></td>
+      <td><% if schedule.all_day == true %>○<% else schedule.all_day =false %><% end %></td>
+      <td><%= schedule.updated_at.to_s(:datetime_jp2) %></td>
+      <td><%= schedule.created_at.to_s(:datetime_jp) %></td>
+      <td><%= link_to "参照", schedule %></td>
+      <td><%= link_to "編集", [:edit, schedule] %></td>
+      <td><%= link_to '削除', schedule, method: :delete, data:{ confirm: '本当に削除して良いですか?', cancel: 'やめる', commit: '削除する'}, title: '削除確認' %></td>
+    
+
+      
+      </tr>
+      
+  <% end %>
+  </tbody>
+
+</table>
+<div>
+<p>予定合計：<%= @schedule_count %>件</p><p>本日の日付:<%= Date.today %></p>
+</div>
+
+<% if flash[:notice] %>
+<p class="notice"><%= flash[:notice] %></p>
+<% end %>
+
+<script>
+

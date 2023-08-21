@@ -1,0 +1,67 @@
+    .toptext{
+    padding-top:12px;
+    }
+    .button_right{
+        float:right;
+       width:100%;
+    }
+    .button_solid004 a {
+        
+        display: flex;
+        justify-content: space-around;
+        align-items: left;
+        float:right;
+        max-width: 240px;
+        padding: 10px 25px;
+        color: #FFF;
+        transition: 0.3s ease-in-out;
+        font-weight: 600;
+        background: #6bb6ff;
+        border-radius: 8px;
+        border-bottom: solid 5px #1d7fde;
+        margin-right:40px;
+        margin-top:40px;
+        text-decoration:none;
+        
+    }
+    .button_solid004 a:hover {
+        border-bottom: solid 2px #1d7fde;
+        transform: translateY(3px);
+    }
+    header {
+    width: 100%;
+    text-align:center;
+    height:50px;
+    
+    background-color:rgb(28,29,59);
+    color:white;
+  }
+  .tablecss{
+    padding-top:30px;
+
+  }
+
+  table th {
+    background-color: #fbc25b;
+    padding: 10px 20px;
+  }
+  
+  table td {
+    background-color: #f9ecd5;
+    padding: 10px 20px;
+  }
+  
+  .notice {
+    background-color: #ccf;
+    padding: 5px;
+  }
+
+  .button_to{
+    color:red;
+    background:red;
+  }
+  .error
+  {
+    color:red;
+    list-style:none;
+  }

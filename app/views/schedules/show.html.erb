@@ -1,0 +1,32 @@
+<h3>ユーザー詳細</h3>
+
+<table>
+  <tr>
+    <th>タイトル</th>
+    <td><%= @schedule.title %></td>
+  </tr>
+  <tr>
+    <th>開始日</th>
+    <td><%= @schedule.startdate %></td>
+  </tr>
+  <tr>
+    <th>終了日</th>
+    <td><%= @schedule.finishdate %></td>
+  </tr>
+  <tr>
+    <th>終日</th>
+    <td><% if @schedule.all_day == true %>○<% else @schedule.all_day =false %><% end %>
+    </td>
+    
+  </tr>
+  <tr>
+    <th>スケジュールメモ</th>
+    <td><%= @schedule.memo %></td>
+  </tr>
+</table>
+
+<div>
+  <ul>
+    <li><%= link_to "ユーザー情報一覧に戻る", :schedules %></li>
+  </ul>
+</div>
