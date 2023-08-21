@@ -4,11 +4,12 @@ class Schedule < ApplicationRecord
     validates :finishdate, presence: true
     validates :memo, length: { in: 0..500 }
     validates :title, length:{in: 0..20}
+    validate:expiration_date_cannot_be_in_the_past
 
-    validate :start_end_check
-    def start_end_check
-      if startdate > finishdate
-         errors.add(:終了日, "の日付を正しく記入してください")
+    def expiration_date_cannot_be_in_the_past
+     unless startdate.nil? or finishdate.nil?
+        errors.add(:finishdate, "過去の日付は使えません") unless
+        startdate <= finishdate
       end
     end
 
