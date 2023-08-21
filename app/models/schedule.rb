@@ -8,7 +8,7 @@ class Schedule < ApplicationRecord
 
     def expiration_date_cannot_be_in_the_past
      unless startdate.nil? or finishdate.nil?
-        errors.add(:finishdate, "過去の日付は使えません") unless
+        errors.add(:finishdate, "は開始日以降の日付で選択してください") unless
         startdate <= finishdate
       end
     end
